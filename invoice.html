@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Invoice</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; }
+        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+        .company-details { text-align: right; }
+        .details-container { display: flex; justify-content: space-between; margin-bottom: 20px; }
+        .invoice-details, .billing-details { width: 48%; }
+        .section-title { font-weight: bold; margin-bottom: 10px; }
+        .table-section { width: 100%; margin-top: 20px; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+        table, th, td { border: 1px solid black; }
+        th, td { padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .total { text-align: right; font-weight: bold; }
+    </style>
+</head>
+<body>
+<div class="header">
+    <img src="companyLogo" alt="Company Logo" width="150">
+    <div class="company-details">
+        <p>{{companyDetails.address}}</p>
+        <p>Tel: {{companyDetails.phone}}</p>
+        <p>Email: {{companyDetails.email}}</p>
+        <p>TRN: {{companyDetails.trn}}</p>
+    </div>
+</div>
+
+<div class="details-container">
+    <div class="billing-details">
+        <h3>Billed To: <strong>{{billing.billedTo}}</strong></h3>
+        <p><strong>TRN:</strong> {{billing.trn}}</p>
+        <p><strong>Address:</strong> {{billing.address}}</p>
+        <p><strong>Booking Party:</strong> {{billing.bookingParty}}</p>
+        <p><strong>Quoted Party:</strong> {{billing.quotedParty}}</p>
+        <p><strong>POL Agent:</strong> {{billing.polAgent}}</p>
+        <p><strong>POD Agent:</strong> {{billing.podAgent}}</p>
+    </div>
+
+    <div class="invoice-details">
+        <h3 class="section-title">Tax Invoice</h3>
+        <p><strong>Client ID:</strong> {{invoice.clientId}}</p>
+        <p><strong>Invoice No:</strong> {{invoice.invoiceNo}}</p>
+        <p><strong>Invoice Date:</strong> {{invoice.invoiceDate}}</p>
+        <p><strong>Sailing Date:</strong> {{invoice.sailingDate}}</p>
+        <p><strong>Vessel:</strong> {{invoice.vessel}}</p>
+        <p><strong>Voyage:</strong> {{invoice.voyage}}</p>
+        <p><strong>Port of Loading:</strong> {{invoice.portOfLoading}}</p>
+        <p><strong>Port of Discharge:</strong> {{invoice.portOfDischarge}}</p>
+    </div>
+</div>
+
+<div class="table-section">
+    <table>
+        <tr>
+            <th>Units</th>
+            <th>Size</th>
+            <th>Type</th>
+            <th>Status</th>
+            <th>Terms</th>
+            <th>Cargo</th>
+            <th>Slot</th>
+            <th>THC</th>
+            <th>Surch.</th>
+            <th>Add. Surch.</th>
+            <th>GRI</th>
+            <th>Discount</th>
+            <th>Total</th>
+        </tr>
+        <tr>
+            <td>15</td>
+            <td>40'</td>
+            <td>HC</td>
+            <td>LDN</td>
+            <td>FIFO</td>
+            <td>General Cargo</td>
+            <td>150</td>
+            <td>0</td>
+            <td>20</td>
+            <td>40</td>
+            <td>20</td>
+            <td>40</td>
+            <td>4,950</td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td>20'</td>
+            <td>HC</td>
+            <td>LDN</td>
+            <td>CYFO</td>
+            <td>General Cargo</td>
+            <td>80</td>
+            <td>100</td>
+            <td>0</td>
+            <td>200</td>
+            <td>200</td>
+            <td>20</td>
+            <td>4,070</td>
+        </tr>
+    </table>
+    <p class="total">Total: AED 33,238.7</p>
+</div>
+
+<div>
+    <p>Container Nos.: NAGASAKI001 --, NAGASAKI002 --</p>
+</div>
+<div>
+    <h3>Bank Details</h3>
+    <p>Bank Name: XYZ Bank Limited</p>
+    <p>Account Title: Company Name LLC</p>
+    <p>Account No: 123456797</p>
+    <p>IBAN: AE456498798123456797</p>
+    <p>Swift Code: AEXXXXYZ</p>
+</div>
+<div>
+    <h3>Note</h3>
+    <p>Payment to be made prior loading on ship.</p>
+    <p>Payment to be made in AED currency only.</p>
+    <p>Payment to be made prior loading on ship.</p>
+</div>
+<footer>
+    <p>This is an auto generated invoice. No signature or stamp required.</p>
+</footer>
+</body>
+</html>
